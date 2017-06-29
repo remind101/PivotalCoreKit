@@ -14,9 +14,6 @@ static NSString *zeroSizeExceptionReason = @"Can't tap a control with no width o
     if (!self.isEnabled) {
         [[NSException exceptionWithName:exceptionName reason:disabledExceptionReason userInfo:nil] raise];
     }
-    if (self.bounds.size.width == 0 || self.bounds.size.height == 0) {
-        [[NSException exceptionWithName:exceptionName reason:zeroSizeExceptionReason userInfo:nil] raise];
-    }
     [self sendActionsForControlEvents:UIControlEventTouchUpInside];
 }
 
